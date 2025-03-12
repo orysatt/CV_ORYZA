@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CF SHAFIRA ORYZA SATIVA</title>
+</head>
+<body bgcolor="#f4f4f4" style="padding: 20px; font-family: Arial, sans-serif; margin: 0;">
+
+    <table width="600" align="center" bgcolor="#ddd" cellspacing="0" cellpadding="10" 
+        style="box-shadow: 0 0 10px #B39E9F; border-radius: 10px;">
+        <tr>
+            <td colspan="2" align="center" bgcolor="#B8A9A1" style="color: #fff; padding: 15px; font-size: 20px;">
+                Contact Form
+            </td>
+        </tr>
+
+        <form id="contactForm">
+            <tr>
+                <td><label for="nama">Nama:</label></td>
+                <td><input type="text" id="nama" name="nama" required></td>
+            </tr>
+            
+            <tr>
+                <td><label for="nohp">No HP/WA:</label></td>
+                <td><input type="text" id="nohp" name="nohp" required></td>
+            </tr>
+            
+            <tr>
+                <td>Jenis Kelamin:</td>
+                <td>
+                    <input type="radio" id="laki" name="gender" value="Laki-Laki" required>
+                    <label for="laki">Laki-Laki</label>
+                    <input type="radio" id="perempuan" name="gender" value="Perempuan">
+                    <label for="perempuan">Perempuan</label>
+                </td>
+            </tr>
+            
+            <tr>
+                <td><label for="pendidikan">Pendidikan:</label></td>
+                <td>
+                    <select id="pendidikan" name="pendidikan">
+                        <option value="S1 Sistem Informasi">S1 Sistem Informasi</option>
+                        <option value="SMA">SMA</option>
+                        <option value="SMP">SMP</option>
+                        <option value="SD">SD</option>
+                    </select>
+                </td>
+            </tr>
+            
+            <tr>
+                <td><label for="email">E-mail:</label></td>
+                <td><input type="email" id="email" name="email" required></td>
+            </tr>
+            
+            <tr>
+                <td><label for="keperluan">Keperluan:</label></td>
+                <td><textarea id="keperluan" name="keperluan" rows="3"></textarea></td>
+            </tr>
+            
+            <tr>
+                <td colspan="2" align="center">
+                    <button type="submit">Submit</button>
+                </td>
+            </tr>
+        </form>
+    </table>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            console.log("Data yang disubmit:");
+            for (let pair of formData.entries()) {
+                console.log(pair[0] + ': ' + pair[1]);
+            }
+            alert("Formulir telah berhasil disubmit!");
+            event.target.reset();
+        });
+    </script>
+
+</body>
+</html>
